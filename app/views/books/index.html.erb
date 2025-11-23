@@ -1,12 +1,24 @@
 <h1>Books</h1>
 
-
 <table>
-  <tr>
-    <th>Title</th>
-    <th>body</th>
-</table>
+  <thead>
+    <tr></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @books.each do |book|  %>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <% end %>  
+    </tr>    
+  </tbody>
 
+
+
+
+
+
+</table>
 
 <% #新規投稿画面 %>
 <h2>New book</h2>
