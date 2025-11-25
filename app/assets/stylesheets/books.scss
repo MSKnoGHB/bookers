@@ -1,3 +1,50 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1 {
+  color: #333333;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: #333333;
+}
+
+.actions {
+  display: block;
+}
+
+.field,
+.actions {
+  margin: 0 0 10px;
+}
+
+.field input {
+  padding: 1px 2px;  
+  width: 153px;
+  height: 21px;
+}
+
+
+.field textarea{
+  padding: 2px; 
+  width: 162px;
+  height: 34px;  
+}
+
+.actions input {
+  padding: 1px 6px ;
+  width: 93.08px;
+  height: 21px; 
+  font-size: 13px;
+  text-align: center;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+}
+
+.navigation-links{
+  font-size: 13px;
+  color: #666666;
+}

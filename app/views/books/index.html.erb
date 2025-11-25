@@ -25,15 +25,13 @@
 <% #新規投稿画面 %>
 <h2>New book</h2>
 
-<form class= "new_books">
+
   <div class="field">
     <%= form_with model: @book do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title %>
       <%= f.label :body %>
       <%= f.text_area :body %>
-      <%= f.submit '投稿' %>
+      <%= f.submit 'Create Book' %>
     <% end %>
   </div>
-
-</form>
