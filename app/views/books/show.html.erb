@@ -1,9 +1,10 @@
-<strong>Title:</strong>
-<p><%= @book.title %></p>
+<div class = "show-contents">
+  <p><strong>Title:</strong><%= @book.title %></p>
+  <p><strong>Body:</strong><%= @book.body %></p>
+</div>
 
-<strong>Body:</strong>
-<p><%= @book.body %></p>
-
-<%=link_to "Edit", edit_book_path(@book)%>
-<text>|</text>
-<%=link_to "Back", books_path%>
+<div class="navigation-links">
+  <%=link_to "Edit", edit_book_path(@book)%>
+  <text>|</text>
+  <%=link_to "Back", books_path%>
+</div>
