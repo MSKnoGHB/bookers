@@ -28,14 +28,21 @@
 
 <% #新規投稿画面 %>
 <h2>New book</h2>
-<% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this book from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+  <div class= "error-window">
+    <% if @book.errors.any? %>  
+      <div class = "error-explanation">
+        <%= @book.errors.count %> errors prohibited this book from being saved:
+      </div>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+
+
+
   <div class="field">
     <%= form_with model: @book do |f| %>
       

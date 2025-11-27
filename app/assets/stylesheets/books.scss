@@ -53,6 +53,27 @@ label {
   font-size: 13px;
 }
 
+.error-window {
+  border: 2px solid red;
+}
+
+.error-explanation {
+  background-color: #CC0000;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+  width: 464px;
+  height: 28px;
+  margin: -7px -7px 0;
+  padding: 5px 5px 5px 15px;
+}
+
+.result-message {
+  font-size: 13px;
+  margin: 33px;
+  color: #008000
+}
+
 .show-contents{
   font-size: 13px;
   color: #333333;
