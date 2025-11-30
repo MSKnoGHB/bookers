@@ -1,29 +1,39 @@
 <h1>Editing Book</h1>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this book from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+  <div class= "error-window">
+    <div class = "error-explanation">
+      <%= @book.errors.count %> errors prohibited this book from being saved:
+    </div>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
   <%= form_with model: @book, method: :patch do |f| %>
-
     <div class = "field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+      <div class="field_with_errors <%= 'error-bg' if @book.title.blank? && @book.errors.any? %>">
+        <%= f.label :title %>
+      </div>
+      <div class="field_with_errors <%= 'error-bg' if @book.title.blank? && @book.errors.any? %>">
+        <%= f.text_field :title %>
+      </div>
     </div>
 
     <div class = "field">
-      <%= f.label :body %>
-      <%= f.text_area :body %>
+      <div class="field_with_errors <%= 'error-bg' if @book.body.blank? && @book.errors.any? %>">
+        <%= f.label :body %>
+      </div>
+      <div class="field_with_errors <%= 'error-bg' if @book.body.blank? && @book.errors.any? %>">
+        <%= f.text_area :body %>
+      </div>
     </div>
-
+    
     <div class = "actions">
       <%= f.submit "Update Book" %>
     </div> 
-
   <% end %>
 
 <div class="navigation-links">

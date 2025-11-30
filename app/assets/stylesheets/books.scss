@@ -12,18 +12,31 @@ h2 {
 }
 
 label {
-  display: block;
   font-size: 13px;
   color: #333333;
 }
 
 .actions {
-  display: block;
+  display: block;  
+  margin: 0 0 10px;
 }
 
-.field,
-.actions {
+.field {
   margin: 0 0 10px;
+}
+
+a{
+  font-size: 13px;
+  color: #000000;
+}
+
+a:hover{
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.field_with_errors{
+display: table;
 }
 
 .field input {
@@ -32,6 +45,10 @@ label {
   height: 21px;
 }
 
+.error-bg{
+  background-color: #FF0000;
+  padding: 2px;
+}
 
 .field textarea{
   padding: 2px; 
@@ -49,12 +66,17 @@ label {
   letter-spacing: -0.5px;
 }
 
-.navigation-links a{
-  font-size: 13px;
-}
-
 .error-window {
   border: 2px solid red;
+  width: 468px;
+  background-color: #f0f0f0;;
+  margin: 0 0 20px;
+}
+
+.error-window ul{
+  margin :33px;
+  padding: 0 0 0 40px;
+  font-size: 13px;
 }
 
 .error-explanation {
@@ -64,8 +86,9 @@ label {
   color: #FFFFFF;
   width: 464px;
   height: 28px;
-  margin: -7px -7px 0;
   padding: 5px 5px 5px 15px;
+  display: flex;
+  align-items: center; 
 }
 
 .result-message {
@@ -88,7 +111,6 @@ table.is_border{
   font-size: 13px;
 }
 
-
 table.is_border th{
   padding:1px 1px 5px ;
   color: #333333;
@@ -102,8 +124,4 @@ table.is_border td{
 table.is_border td{
   margin: 33px;
   padding:1px 5px 7px;
-}
-
-a{
-  color: #000000;
 }

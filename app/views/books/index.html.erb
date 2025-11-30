@@ -3,7 +3,6 @@
 </div>
 
 <h1>Books</h1>
-
 <table class="is_border">
   <thead>
     <tr>
@@ -15,21 +14,21 @@
 
   <tbody>
     <% @books.each do |book| %>
-    <tr>
-      <td><%= book.title %></td>
-      <td><%= book.body %></td>
-      <td><%= link_to "Show", book_path(book)%></td>
-      <td><%= link_to "Edit", edit_book_path(book)%></td>
-      <td><%= link_to "Destroy", book_path(book), method: :delete, "data-confirm"=>"本当に削除しますか"%></td>
-      <% end %>  
-    </tr>    
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><%= link_to "Show", book_path(book)%></td>
+        <td><%= link_to "Edit", edit_book_path(book)%></td>
+        <td><%= link_to "Destroy", book_path(book), method: :delete, "data-confirm"=>"本当に削除しますか"%></td>
+      </tr>
+    <% end %> 
   </tbody>
 </table>
 
 <% #新規投稿画面 %>
 <h2>New book</h2>
-  <div class= "error-window">
-    <% if @book.errors.any? %>  
+  <% if @book.errors.any? %>
+    <div class= "error-window">
       <div class = "error-explanation">
         <%= @book.errors.count %> errors prohibited this book from being saved:
       </div>
@@ -38,26 +37,29 @@
           <li><%= message %></li>
         <% end %>
       </ul>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
-
-
+<%= form_with model: @book do |f| %>
   <div class="field">
-    <%= form_with model: @book do |f| %>
-      
-    <div class = "field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+    <div class ="field_with_errors <%= 'error-bg' if @book.title.blank? && @book.errors.any? %>">
+      <%= f.label :title %> 
     </div>
-
-    <div class = "field">
-      <%= f.label :body %>
-      <%= f.text_area :body %>
+    <div class ="field_with_errors <%= 'error-bg' if @book.title.blank? && @book.errors.any? %>">
+      <%= f.text_field :title %>  
     </div>
-
-    <div class = "actions">
-      <%= f.submit 'Create Book' %>
-    </div>
-    <% end %>
   </div>
+
+  <div class = "field"> 
+    <div class ="field_with_errors <%= 'error-bg' if @book.body.blank? && @book.errors.any? %>">
+      <%= f.label :body %>        
+    </div>
+    <div class ="field_with_errors <%= 'error-bg' if @book.body.blank? && @book.errors.any? %>">
+      <%= f.text_area :body %> 
+    </div> 
+  </div>
+
+  <div class = "actions">
+    <%= f.submit 'Create Book' %>
+  </div>
+<% end %>
